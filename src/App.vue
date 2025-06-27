@@ -1,9 +1,21 @@
 <script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
+import Header from "./components/sections/Header.vue";
+import Hero from "./components/sections/Hero.vue";
+import Features from "./components/sections/Features.vue";
+import CallToAction from "./components/sections/CallToAction.vue";
+import Contact from "./components/sections/Contact.vue";
+import Pricing from "./components/sections/Pricing.vue";
+import Footer from "./components/sections/Footer.vue";
 </script>
 
 <template>
-  <HelloWorld msg="Memos tech task" />
+  <Header />
+  <Hero />
+  <Features />
+  <CallToAction />
+  <Contact />
+  <Pricing />
+  <Footer />
 </template>
 
 <style scoped></style>
