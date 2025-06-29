@@ -10,11 +10,13 @@ import Footer from "./components/sections/Footer.vue";
 
 <template>
   <Header />
-  <Hero />
-  <Features />
-  <CallToAction />
-  <Contact />
-  <Pricing />
+  <main>
+    <Hero />
+    <Features />
+    <CallToAction />
+    <Contact />
+    <Pricing />
+  </main>
   <Footer />
 </template>
 
