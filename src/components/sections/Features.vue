@@ -17,8 +17,8 @@ import features from "../../content/features/features.json";
 
       <div class="col-md-7">
         <div class="d-flex flex-column align-items-start gap-2">
-          <h2 class="fw-bold text-body-emphasis">We Create Something New</h2>
-          <p class="text-body-secondary">
+          <h2 class="fw-bold">We Create Something New</h2>
+          <p class="">
             We have created a new product that will help designers, developers
             and companies create websites for their startups quickly and easily.
           </p>
@@ -47,10 +47,10 @@ import features from "../../content/features/features.json";
                   <use href="../../assets/squares.svg"></use>
                 </svg>
               </div>
-              <h4 class="fw-semibold mb-0 text-body-emphasis">
+              <h4 class="fw-semibold mb-0">
                 30 New feature pages
               </h4>
-              <p class="text-body-secondary">
+              <p class="">
                 Startup Framework contains components and complex blocks which
                 can easily.
               </p>
@@ -63,10 +63,10 @@ import features from "../../content/features/features.json";
                   <use href="../../assets/diamond.svg"></use>
                 </svg>
               </div>
-              <h4 class="fw-semibold mb-0 text-body-emphasis">
+              <h4 class="fw-semibold mb-0">
                 Useful Symbol Components
               </h4>
-              <p class="text-body-secondary">
+              <p class="">
                 Samples will show you the feeling on how to play around using
                 the components.
               </p>
@@ -79,10 +79,10 @@ import features from "../../content/features/features.json";
                   <use href="../../assets/diamond.svg"></use>
                 </svg>
               </div>
-              <h4 class="fw-semibold mb-0 text-body-emphasis">
+              <h4 class="fw-semibold mb-0">
                 Featured title
               </h4>
-              <p class="text-body-secondary">
+              <p class="">
                 Paragraph of text beneath the heading to explain the heading.
               </p>
             </div>
@@ -94,10 +94,10 @@ import features from "../../content/features/features.json";
                   <use href="../../assets/squares.svg"></use>
                 </svg>
               </div>
-              <h4 class="fw-semibold mb-0 text-body-emphasis">
+              <h4 class="fw-semibold mb-0">
                 Featured title
               </h4>
-              <p class="text-body-secondary">
+              <p class="">
                 Paragraph of text beneath the heading to explain the heading.
               </p>
             </div> -->

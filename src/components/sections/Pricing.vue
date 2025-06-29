@@ -3,10 +3,8 @@
     <div class="container">
       <div class="container py-3">
         <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-          <h2 class="display-4 fw-normal text-body-emphasis">
-            Plans & Pricing
-          </h2>
-          <p class="fs-5 text-body-secondary">
+          <h2 class="display-4 fw-normal">Plans & Pricing</h2>
+          <p class="fs-5">
             Startup Framework is free forever — you only pay for custom domain
             hosting or to export your site.
           </p>
@@ -20,7 +18,7 @@
               </div>
               <div class="card-body">
                 <h1 class="card-title pricing-card-title">
-                  $0<small class="text-body-secondary fw-light">/mo</small>
+                  $0<small class="fw-light">/mo</small>
                 </h1>
                 <ul class="list-unstyled mt-3 mb-4">
                   <li>10 users included</li>
@@ -44,7 +42,7 @@
               </div>
               <div class="card-body">
                 <h1 class="card-title pricing-card-title">
-                  $15<small class="text-body-secondary fw-light">/mo</small>
+                  $15<small class="fw-light">/mo</small>
                 </h1>
                 <ul class="list-unstyled mt-3 mb-4">
                   <li>20 users included</li>
@@ -67,7 +65,7 @@
               </div>
               <div class="card-body">
                 <h1 class="card-title pricing-card-title">
-                  $29<small class="text-body-secondary fw-light">/mo</small>
+                  $29<small class="fw-light">/mo</small>
                 </h1>
                 <ul class="list-unstyled mt-3 mb-4">
                   <li>30 users included</li>

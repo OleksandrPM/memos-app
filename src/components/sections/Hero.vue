@@ -1,5 +1,4 @@
 <script setup>
-import Button from "../Button.vue";
 import Introduction from "../Introduction.vue";
 import projects from "../../content/hero/projects.json";
 </script>
@@ -8,20 +7,19 @@ import projects from "../../content/hero/projects.json";
   <section id="hero" class="px-4 py-5 text-center">
     <div class="container py-5">
       <h2 class="visually-hidden">Hero</h2>
-      <div
-        id="carouselExampleIndicators"
-        class="carousel slide"
-        data-ride="carousel"
-      >
-        <ol class="carousel-indicators">
-          <li
+      <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
             v-for="(project, index) in projects"
             :key="index"
-            data-target="#carouselExampleIndicators"
-            :data-slide-to="index"
+            :data-bs-slide-to="index"
             :class="index === 0 ? 'active' : ''"
-          ></li>
-        </ol>
+            :aria-current="index === 0 ? 'true' : ''"
+            :aria-label="'Slide ' + index"
+          ></button>
+        </div>
         <ul class="carousel-inner">
           <li
             v-for="(project, index) in projects"
@@ -35,32 +33,33 @@ import projects from "../../content/hero/projects.json";
             />
           </li>
         </ul>
-        <a
+        <button
           class="carousel-control-prev"
-          href="#carouselExampleIndicators"
-          role="button"
-          data-slide="prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
         >
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
           class="carousel-control-next"
-          href="#carouselExampleIndicators"
-          role="button"
-          data-slide="next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
         >
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
 
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <Button
-          customClass="btn btn-primary btn-lg px-4 gap-3"
-          label="Create an account"
+        <button
+          class="btn btn-primary rounded-pill btn-lg px-4"
           @click="handleClick"
-        />
+        >
+          Create an account
+        </button>
       </div>
     </div>
   </section>
@@ -68,7 +67,6 @@ import projects from "../../content/hero/projects.json";
 
 <script>
 export default {
-  components: { Button },
   methods: {
     handleClick() {
       console.log("Create account button was clicked");

@@ -1,8 +1,6 @@
 <template>
   <div class="col d-flex flex-column gap-2">
-    <div
-      class="feature-icon-small d-inline-flex align-items-center text-bg-primary bg-gradient fs-4 rounded-3"
-    >
+    <div class="feature-icon-small d-inline-flex align-items-center">
       <svg
         class="bi"
         :width="badgeWidth"
@@ -12,8 +10,8 @@
         <use :href="badgePath"></use>
       </svg>
     </div>
-    <h4 class="fw-semibold mb-0 text-body-emphasis">{{ name }}</h4>
-    <p class="text-body-secondary">
+    <h4 class="fw-semibold mb-0">{{ name }}</h4>
+    <p class="">
       {{ description }}
     </p>
   </div>
