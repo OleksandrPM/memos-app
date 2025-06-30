@@ -5,4 +5,5 @@ import vue from "@vitejs/plugin-vue";
 export default defineConfig({
   plugins: [vue()],
   base: "/memos-app/",
+  build: { assetsInlineLimit: 0 },
 });

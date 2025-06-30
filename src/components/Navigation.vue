@@ -12,14 +12,14 @@
       <li>
         <a href="#" class="nav-link text-white px-2">
           <svg class="" width="16" height="21">
-            <use href="../assets/fa-dribbble.svg"></use>
+            <use href="/sprite.svg#fa-dribbble"></use>
           </svg>
         </a>
       </li>
       <li>
         <a href="#" class="nav-link text-white px-2">
           <svg class="" width="21" height="21">
-            <use href="../assets/fa-behance.svg"></use>
+            <use href="/sprite.svg#fa-behance"></use>
           </svg>
         </a>
       </li>

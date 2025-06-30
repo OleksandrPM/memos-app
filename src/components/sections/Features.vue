@@ -39,68 +39,6 @@ import features from "../../content/features/features.json";
               :badgeWidth="features[1].badgeWidth"
               :badgeHeight="features[1].badgeHeight"
             />
-            <!-- <div class="col d-flex flex-column gap-2">
-              <div
-                class="feature-icon-small d-inline-flex align-items-center text-bg-primary bg-gradient fs-4 rounded-3"
-              >
-                <svg class="bi" width="38" height="38" aria-hidden="true">
-                  <use href="../../assets/squares.svg"></use>
-                </svg>
-              </div>
-              <h4 class="fw-semibold mb-0">
-                30 New feature pages
-              </h4>
-              <p class="">
-                Startup Framework contains components and complex blocks which
-                can easily.
-              </p>
-            </div>
-            <div class="col d-flex flex-column gap-2">
-              <div
-                class="feature-icon-small d-inline-flex align-items-center text-bg-primary bg-gradient fs-4 rounded-3"
-              >
-                <svg class="bi" width="44" height="35" aria-hidden="true">
-                  <use href="../../assets/diamond.svg"></use>
-                </svg>
-              </div>
-              <h4 class="fw-semibold mb-0">
-                Useful Symbol Components
-              </h4>
-              <p class="">
-                Samples will show you the feeling on how to play around using
-                the components.
-              </p>
-            </div>
-            <div class="col d-flex flex-column gap-2">
-              <div
-                class="feature-icon-small d-inline-flex align-items-center text-bg-primary bg-gradient fs-4 rounded-3"
-              >
-                <svg class="bi" width="44" height="35" aria-hidden="true">
-                  <use href="../../assets/diamond.svg"></use>
-                </svg>
-              </div>
-              <h4 class="fw-semibold mb-0">
-                Featured title
-              </h4>
-              <p class="">
-                Paragraph of text beneath the heading to explain the heading.
-              </p>
-            </div>
-            <div class="col d-flex flex-column gap-2">
-              <div
-                class="feature-icon-small d-inline-flex align-items-center text-bg-primary bg-gradient fs-4 rounded-3"
-              >
-                <svg class="bi" width="38" height="38" aria-hidden="true">
-                  <use href="../../assets/squares.svg"></use>
-                </svg>
-              </div>
-              <h4 class="fw-semibold mb-0">
-                Featured title
-              </h4>
-              <p class="">
-                Paragraph of text beneath the heading to explain the heading.
-              </p>
-            </div> -->
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@
             rel="noopener noreferrer"
           >
             <svg class="bi ms-2" width="16" height="16" aria-hidden="true">
-              <use href="../../assets/play.svg"></use>
+              <use href="/sprite.svg#play"></use>
             </svg>
           </a>
           <a
