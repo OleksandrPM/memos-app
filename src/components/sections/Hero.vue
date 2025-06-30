@@ -1,6 +1,6 @@
 <script setup>
 import Introduction from "../Introduction.vue";
-import projects from "@/content/hero/projects.json";
+import projects from "../../content/hero/projects.json";
 </script>
 
 <template>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import PricingCard from "../PricingCard.vue";
-import plans from "@/content/pricing/plans.json";
+import plans from "../../content/pricing/plans.json";
 </script>
 
 <template>
