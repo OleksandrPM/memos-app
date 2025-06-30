@@ -18,5 +18,5 @@
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ],
-  "include": ["src", "./vue-shims.d.ts"]
+  "include": ["src", "vue-shims.d.ts"]
 }
