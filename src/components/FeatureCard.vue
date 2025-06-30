@@ -1,31 +1,28 @@
+<script setup lang="ts">
+const props = defineProps<{
+  name: string;
+  description: string;
+  badgePath: string;
+  badgeWidth: string;
+  badgeHeight: string;
+}>();
+</script>
+
 <template>
   <div class="col d-flex flex-column gap-2">
     <div class="feature-icon-small d-inline-flex align-items-center">
       <svg
         class="bi"
-        :width="badgeWidth"
-        :height="badgeHeight"
+        :width="props.badgeWidth"
+        :height="props.badgeHeight"
         aria-hidden="true"
       >
-        <use :href="badgePath"></use>
+        <use :href="props.badgePath"></use>
       </svg>
     </div>
-    <h4 class="fw-semibold mb-0">{{ name }}</h4>
+    <h4 class="fw-semibold mb-0">{{ props.name }}</h4>
     <p class="">
-      {{ description }}
+      {{ props.description }}
     </p>
   </div>
 </template>
-
-<script>
-export default {
-  name: "FeatureCard",
-  props: {
-    name: { type: String, default: "Feature`s name" },
-    description: { type: String, default: "" },
-    badgePath: { default: "/memos-app/src/assets/diamond.svg" },
-    badgeWidth: { type: String, default: "44" },
-    badgeHeight: { type: String, default: "35" },
-  },
-};
-</script>

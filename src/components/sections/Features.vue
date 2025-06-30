@@ -1,6 +1,6 @@
-<script setup>
+<script setup lang="ts">
 import FeatureCard from "../FeatureCard.vue";
-import features from "../../content/features/features.json";
+import features from "@/content/features/features.json";
 </script>
 
 <template>

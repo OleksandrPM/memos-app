@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Starter",
+    "price": "9.99",
+    "advantages": [
+      "2 GB of space",
+      "14 days of backups",
+      "Social integrations",
+      "Client billing"
+    ]
+  },
+  {
+    "name": "Professional",
+    "price": "19.99",
+    "advantages": [
+      "2 GB of space",
+      "14 days of backups",
+      "Social integrations",
+      "Client billing",
+      "Remote access",
+      "Custom domain",
+      "24 hours support"
+    ]
+  },
+  {
+    "name": "Team",
+    "price": "49.99",
+    "advantages": [
+      "2 GB of space",
+      "14 days of backups",
+      "Social integrations",
+      "Client billing",
+      "Remote access",
+      "Custom domain",
+      "24 hours support",
+      "Admin tools",
+      "Collaboration tools",
+      "User management"
+    ]
+  }
+]
