@@ -3,7 +3,7 @@ import { ref } from "vue";
 
 const formRef = ref<HTMLFormElement | null>(null);
 
-const handleSubmit = (e: SubmitEvent) => {
+const handleSubmit = (e: Event) => {
   const formEl = e.target as HTMLFormElement;
   const formData = new FormData(formEl);
   const data = Object.fromEntries(formData.entries());

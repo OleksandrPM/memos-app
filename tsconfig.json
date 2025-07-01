@@ -4,10 +4,11 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "target": "ES2022",
-    "lib": ["ES2022", "DOM"],
+    "lib": ["ES2022", "DOM", "dom.iterable", "esnext"],
     "noEmit": true,
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "downlevelIteration": true
   },
 
   "include": ["vite-env.d.ts", "src/**/*"]
