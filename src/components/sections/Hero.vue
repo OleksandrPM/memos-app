@@ -7,12 +7,12 @@ import projects from "../../content/hero/projects.json";
   <section id="hero" class="px-4 py-5 text-center">
     <div class="container py-5">
       <h2 class="visually-hidden">Hero</h2>
-      <div id="carouselExampleIndicators" class="carousel slide">
+      <div id="carouselHero" class="carousel slide">
         <div class="carousel-indicators">
           <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
             v-for="(project, index) in projects"
+            type="button"
+            data-bs-target="#carouselHero"
             :key="index"
             :data-bs-slide-to="index"
             :class="index === 0 ? 'active' : ''"
@@ -36,7 +36,7 @@ import projects from "../../content/hero/projects.json";
         <button
           class="carousel-control-prev"
           type="button"
-          data-bs-target="#carouselExampleIndicators"
+          data-bs-target="#carouselHero"
           data-bs-slide="prev"
         >
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -45,7 +45,7 @@ import projects from "../../content/hero/projects.json";
         <button
           class="carousel-control-next"
           type="button"
-          data-bs-target="#carouselExampleIndicators"
+          data-bs-target="#carouselHero"
           data-bs-slide="next"
         >
           <span class="carousel-control-next-icon" aria-hidden="true"></span>

@@ -14,73 +14,66 @@
     "badgeHeight": "35"
   },
   {
-    "name": "Featured title",
+    "name": "Featured title 3",
     "description": "Paragraph of text beneath the heading to explain the heading.",
     "badgePath": "/memos-app/sprite.svg#squares",
     "badgeWidth": "38",
     "badgeHeight": "38"
   },
   {
-    "name": "Featured title",
+    "name": "Featured title 4",
     "description": "Paragraph of text beneath the heading to explain the heading.",
     "badgePath": "/memos-app/sprite.svg#diamond",
     "badgeWidth": "44",
     "badgeHeight": "35"
   },
   {
-    "name": "Featured title",
+    "name": "Featured title 5",
     "description": "Paragraph of text beneath the heading to explain the heading.",
     "badgePath": "/memos-app/sprite.svg#diamond",
     "badgeWidth": "44",
     "badgeHeight": "35"
   },
   {
-    "name": "Featured title",
+    "name": "Featured title 6",
     "description": "Paragraph of text beneath the heading to explain the heading.",
     "badgePath": "/memos-app/sprite.svg#squares",
     "badgeWidth": "38",
     "badgeHeight": "38"
   },
   {
-    "name": "Featured title",
+    "name": "Featured title 7",
     "description": "Paragraph of text beneath the heading to explain the heading.",
     "badgePath": "/memos-app/sprite.svg#diamond",
     "badgeWidth": "44",
     "badgeHeight": "35"
   },
   {
-    "name": "Featured title",
+    "name": "Featured title 8",
     "description": "Paragraph of text beneath the heading to explain the heading.",
     "badgePath": "/memos-app/sprite.svg#squares",
     "badgeWidth": "38",
     "badgeHeight": "38"
   },
   {
-    "name": "Featured title",
+    "name": "Featured title 9",
     "description": "Paragraph of text beneath the heading to explain the heading.",
     "badgePath": "/memos-app/sprite.svg#diamond",
     "badgeWidth": "44",
     "badgeHeight": "35"
   },
   {
-    "name": "Featured title",
+    "name": "Featured title 10",
     "description": "Paragraph of text beneath the heading to explain the heading.",
     "badgePath": "/memos-app/sprite.svg#squares",
     "badgeWidth": "38",
     "badgeHeight": "38"
   },
   {
-    "name": "Featured title",
+    "name": "Featured title 11",
     "description": "Paragraph of text beneath the heading to explain the heading.",
     "badgePath": "/memos-app/sprite.svg#squares",
     "badgeWidth": "38",
     "badgeHeight": "38"
-  },
-  {
-    "name": "Featured title",
-    "description": "Paragraph of text beneath the heading to explain the heading.",
-    "badgePath": "/memos-app/sprite.svg#diamond",
-    "badgeWidth": "44",
-    "badgeHeight": "35"
   }
 ]

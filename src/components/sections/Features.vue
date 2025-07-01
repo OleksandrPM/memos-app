@@ -1,6 +1,18 @@
 <script setup lang="ts">
+import { computed } from "vue";
+
 import FeatureCard from "../FeatureCard.vue";
 import features from "../../content/features/features.json";
+
+const groupedFeatures = computed(() => {
+  const result = [];
+
+  for (let i = 0; i < features.length; i += 2) {
+    result.push(features.slice(i, i + 2));
+  }
+
+  return result;
+});
 </script>
 
 <template>
@@ -9,13 +21,13 @@ import features from "../../content/features/features.json";
     <div class="row">
       <div class="col-4 d-none d-md-block">
         <img
+          class="mockup"
           src="../../assets/images/features/Mockup.png"
           alt="laptop"
-          class="mockup"
         />
       </div>
 
-      <div class="col-md-7">
+      <div class="features-content col-md-7 pe-5">
         <div class="d-flex flex-column align-items-start gap-2">
           <h2 class="fw-bold">We Create Something New</h2>
           <p class="">
@@ -23,22 +35,44 @@ import features from "../../content/features/features.json";
             and companies create websites for their startups quickly and easily.
           </p>
         </div>
-        <div class="col">
-          <div class="row row-cols-1 row-cols-sm-2 g-4">
-            <FeatureCard
-              :name="features[0].name"
-              :description="features[0].description"
-              :badgePath="features[0].badgePath"
-              :badgeWidth="features[0].badgeWidth"
-              :badgeHeight="features[0].badgeHeight"
-            />
-            <FeatureCard
-              :name="features[1].name"
-              :description="features[1].description"
-              :badgePath="features[1].badgePath"
-              :badgeWidth="features[1].badgeWidth"
-              :badgeHeight="features[1].badgeHeight"
-            />
+
+        <div
+          id="carouselFeatures"
+          class="vertical carousel slide"
+          data-bs-interval="false"
+        >
+          <div
+            class="carousel-indicators features-carousel-indicators d-flex flex-column gap-3"
+          >
+            <button
+              v-for="(group, index) in groupedFeatures"
+              type="button"
+              data-bs-target="#carouselFeatures"
+              :key="index"
+              :data-bs-slide-to="index"
+              :class="index === 0 ? 'active' : ''"
+              :aria-current="index === 0 ? 'true' : ''"
+              :aria-label="'Slide ' + index"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div
+              v-for="(group, index) in groupedFeatures"
+              :class="['carousel-item', index === 0 ? 'active' : '']"
+              :key="index"
+            >
+              <div class="item-group item row">
+                <div v-for="(item, i) in group" :key="i" class="col">
+                  <FeatureCard
+                    :name="item.name"
+                    :description="item.description"
+                    :badgePath="item.badgePath"
+                    :badgeWidth="item.badgeWidth"
+                    :badgeHeight="item.badgeHeight"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -71,5 +105,57 @@ import features from "../../content/features/features.json";
 
 .mockup {
   width: 100%;
+}
+
+.features-content {
+  position: relative;
+}
+
+/* .carousel {
+  height: calc(100% - 90px);
+  z-index: 1;
+} */
+
+/* .carousel-inner,
+.carousel-item {
+  height: 100%;
+} */
+
+/* .carousel-content {
+  height: 100%;
+} */
+
+.carousel-indicators.features-carousel-indicators {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  align-items: end;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 15px;
+  height: 15px;
+  border: 1px solid hsla(0, 0%, 0%, 1);
+  border-radius: 50%;
+  background-color: hsla(0, 0%, 100%, 1);
+
+  transform: translateY(-50%);
+}
+
+.carousel-indicators .active {
+  background-color: hsla(0, 0%, 0%, 1);
+}
+
+.carousel-item-prev:not(.carousel-item-end),
+.active.carousel-item-start {
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+}
+
+.carousel-item-next:not(.carousel-item-start),
+.active.carousel-item-end {
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
 }
 </style>
