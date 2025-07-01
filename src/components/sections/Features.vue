@@ -51,7 +51,7 @@ const groupedFeatures = computed(() => {
               :key="index"
               :data-bs-slide-to="index"
               :class="index === 0 ? 'active' : ''"
-              :aria-current="index === 0 ? 'true' : ''"
+              :aria-current="index === 0 ? 'true' : undefined"
               :aria-label="'Slide ' + index"
             ></button>
           </div>
