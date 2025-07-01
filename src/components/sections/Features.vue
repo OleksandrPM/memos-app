@@ -26,51 +26,45 @@ const groupedFeatures = computed(() => {
           alt="laptop"
         />
       </div>
-
-      <div class="features-content col-md-7 pe-5">
-        <div class="d-flex flex-column align-items-start gap-2">
-          <h2 class="fw-bold">We Create Something New</h2>
-          <p class="">
-            We have created a new product that will help designers, developers
-            and companies create websites for their startups quickly and easily.
-          </p>
-        </div>
-
+      <div
+        id="carouselFeatures"
+        class="vertical carousel slide col-md-7 d-flex flex-column align-items-start gap-2 pe-5"
+        data-bs-interval="false"
+      >
+        <h2 class="fw-bold">We Create Something New</h2>
+        <p class="">
+          We have created a new product that will help designers, developers and
+          companies create websites for their startups quickly and easily.
+        </p>
         <div
-          id="carouselFeatures"
-          class="vertical carousel slide"
-          data-bs-interval="false"
+          class="carousel-indicators features-carousel-indicators d-flex flex-column gap-3"
         >
+          <button
+            v-for="(group, index) in groupedFeatures"
+            type="button"
+            data-bs-target="#carouselFeatures"
+            :key="index"
+            :data-bs-slide-to="index"
+            :class="index === 0 ? 'active' : ''"
+            :aria-current="index === 0 ? 'true' : undefined"
+            :aria-label="'Slide ' + index"
+          ></button>
+        </div>
+        <div class="carousel-inner">
           <div
-            class="carousel-indicators features-carousel-indicators d-flex flex-column gap-3"
+            v-for="(group, index) in groupedFeatures"
+            :class="['carousel-item', index === 0 ? 'active' : '']"
+            :key="index"
           >
-            <button
-              v-for="(group, index) in groupedFeatures"
-              type="button"
-              data-bs-target="#carouselFeatures"
-              :key="index"
-              :data-bs-slide-to="index"
-              :class="index === 0 ? 'active' : ''"
-              :aria-current="index === 0 ? 'true' : undefined"
-              :aria-label="'Slide ' + index"
-            ></button>
-          </div>
-          <div class="carousel-inner">
-            <div
-              v-for="(group, index) in groupedFeatures"
-              :class="['carousel-item', index === 0 ? 'active' : '']"
-              :key="index"
-            >
-              <div class="item-group item row">
-                <div v-for="(item, i) in group" :key="i" class="col">
-                  <FeatureCard
-                    :name="item.name"
-                    :description="item.description"
-                    :badgePath="item.badgePath"
-                    :badgeWidth="item.badgeWidth"
-                    :badgeHeight="item.badgeHeight"
-                  />
-                </div>
+            <div class="item-group item row">
+              <div v-for="(item, i) in group" :key="i" class="col">
+                <FeatureCard
+                  :name="item.name"
+                  :description="item.description"
+                  :badgePath="item.badgePath"
+                  :badgeWidth="item.badgeWidth"
+                  :badgeHeight="item.badgeHeight"
+                />
               </div>
             </div>
           </div>
@@ -107,25 +101,7 @@ const groupedFeatures = computed(() => {
   width: 100%;
 }
 
-.features-content {
-  position: relative;
-}
-
-/* .carousel {
-  height: calc(100% - 90px);
-  z-index: 1;
-} */
-
-/* .carousel-inner,
-.carousel-item {
-  height: 100%;
-} */
-
-/* .carousel-content {
-  height: 100%;
-} */
-
-.carousel-indicators.features-carousel-indicators {
+.carousel-indicators {
   position: absolute;
   top: 0;
   right: 0;

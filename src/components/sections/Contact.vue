@@ -1,3 +1,23 @@
+<script setup lang="ts">
+import { ref } from "vue";
+
+const formRef = ref<HTMLFormElement | null>(null);
+
+const handleSubmit = (e: SubmitEvent) => {
+  const formEl = e.target as HTMLFormElement;
+  const formData = new FormData(formEl);
+  const data = Object.fromEntries(formData.entries());
+
+  const resultString = Object.entries(data)
+    .map(([key, value]) => `${key} - ${value}`)
+    .join(", ");
+
+  alert(`You send the next data: ${resultString}`);
+
+  formRef.value?.reset();
+};
+</script>
+
 <template>
   <section id="contact" class="py-5">
     <h2 class="visually-hidden">Contact</h2>
@@ -22,6 +42,8 @@
         <div class="col">
           <form
             class="contact100-form validate-form needs-validation d-flex flex-column gap-3"
+            ref="formRef"
+            @submit.prevent="handleSubmit"
           >
             <div class="row d-flex justify-content-between">
               <div class="col-sm-6">
@@ -30,9 +52,11 @@
                   type="text"
                   class="form-control rounded-pill"
                   id="firstName"
+                  name="firstName"
                   placeholder="First name"
                   value=""
                   required
+                  autocomplete="name"
                 />
                 <div class="invalid-feedback">
                   Valid first name is required.
@@ -40,13 +64,17 @@
               </div>
               <div class="col-sm-5">
                 <label for="budget" class="form-label">BUDGET</label>
-                <select class="form-select rounded-pill" id="budget">
-                  <option value="">$500</option>
-                  <option>$1000</option>
-                  <option>$1500</option>
-                  <option>$2000</option>
-                  <option>$2500</option>
-                  <option>$3000</option>
+                <select
+                  class="form-select rounded-pill"
+                  id="budget"
+                  name="budget"
+                >
+                  <option value="500">$500</option>
+                  <option value="1000">$1000</option>
+                  <option value="1500">$1500</option>
+                  <option value="2000">$2000</option>
+                  <option value="2500">$2500</option>
+                  <option value="3000">$3000</option>
                 </select>
               </div>
             </div>
@@ -57,9 +85,11 @@
                   type="email"
                   class="form-control rounded-pill"
                   id="email"
+                  name="email"
                   placeholder="name@mail.com"
                   value=""
                   required
+                  autocomplete="email"
                 />
                 <div class="invalid-feedback">Valid email is required.</div>
               </div>
@@ -68,8 +98,8 @@
               <div class="col">
                 <label for="message" class="form-label">MESSAGE</label>
                 <textarea
-                  name="message"
                   id="message"
+                  name="message"
                   class="form-control rounded-3"
                   placeholder="Message"
                   rows="3"
@@ -84,8 +114,8 @@
                 <input
                   class="input-checkbox100"
                   id="ckb1"
-                  type="checkbox"
                   name="copy-mail"
+                  type="checkbox"
                 />
                 <label class="label-checkbox100" for="ckb1">
                   Send me a copy
