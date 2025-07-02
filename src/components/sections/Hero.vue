@@ -69,7 +69,7 @@ import projects from "../../content/hero/projects.json";
 export default {
   methods: {
     handleClick() {
-      console.log("Create account button was clicked");
+      alert("Create account button was clicked");
     },
   },
 };

@@ -1,5 +1,11 @@
+@font-face {
+  font-family: "DM Sans";
+  src: url("./assets/fonts/DMSans-VariableFont.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
-  /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; */
   /* line-height: 1.5;
   font-weight: 400;
 
@@ -23,7 +29,9 @@ a:hover {
 }
 
 body {
-  /* background-color: rgba(47, 24, 147, 1); */
+  font-family: "DM Sans", sans-serif;
+  /* font-size: 22px; */
+  background-color: rgba(47, 24, 147, 1);
   /* margin: 0;
   display: flex;
   place-items: center;
