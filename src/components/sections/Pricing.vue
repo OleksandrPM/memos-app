@@ -28,8 +28,4 @@ import plans from "../../content/pricing/plans.json";
   </section>
 </template>
 
-<style scoped>
-#pricing {
-  background-color: rgba(47, 24, 147, 1);
-}
-</style>
+<style lang="scss"></style>

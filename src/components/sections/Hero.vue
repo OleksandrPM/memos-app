@@ -8,14 +8,14 @@ import projects from "../../content/hero/projects.json";
     <div class="container py-5">
       <h2 class="visually-hidden">Hero</h2>
       <div id="carouselHero" class="carousel slide">
-        <div class="carousel-indicators">
+        <div class="carousel-indicators custom-indicators d-flex gap-3">
           <button
             v-for="(project, index) in projects"
             type="button"
             data-bs-target="#carouselHero"
             :key="index"
             :data-bs-slide-to="index"
-            :class="index === 0 ? 'active' : ''"
+            :class="['pagination-btn', index === 0 ? 'active' : '']"
             :aria-current="index === 0 ? 'true' : ''"
             :aria-label="'Slide ' + index"
           ></button>
@@ -75,9 +75,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 #hero {
-  background: linear-gradient(rgba(47, 24, 147, 0.5)),
+  background: linear-gradient(rgba($color-background, 0.5)),
     url("../../assets/images/hero/hero-background.jpg");
   background-position: center;
   background-size: cover;
@@ -88,7 +88,7 @@ export default {
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   #hero {
-    background: linear-gradient(rgba(47, 24, 147, 0.5)),
+    background: linear-gradient(rgba($color-background, 0.5)),
       url("../../assets/images/hero/hero-background.jpg");
   }
 }

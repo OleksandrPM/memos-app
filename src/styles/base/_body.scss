@@ -1,0 +1,17 @@
+@use "../utils/variables" as *;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-normal;
+  font-size: 22px;
+
+  // instead of property "leading-trim: none"
+  text-box-trim: none;
+  text-box-edge: cap alphabetic;
+
+  color: $color-text-main;
+  background-color: $color-background;
+}

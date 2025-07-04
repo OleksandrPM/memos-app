@@ -6,4 +6,16 @@ export default defineConfig({
   plugins: [vue()],
   base: "/memos-app/",
   build: { assetsInlineLimit: 0 },
+  resolve: {
+    alias: {
+      "@": "/src",
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@/styles/utils" as *;`,
+      },
+    },
+  },
 });

@@ -1,0 +1,32 @@
+@use "../utils/variables" as *;
+
+.custom-indicators.carousel-indicators {
+  // gap: 9px;
+
+  & [data-bs-target] {
+    margin: 0;
+
+    box-sizing: border-box;
+    width: 10px;
+    height: 10px;
+    border-top: 0;
+    border-bottom: 0;
+    border: 1px solid $color-text-main;
+    border-radius: 50%;
+
+    opacity: 0.5;
+    background-color: rgba($color-text-main, 0);
+
+    transition: border-color 0.6s ease, background-color 0.6s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.active {
+      opacity: 1;
+      border-color: rgba($color-text-main, 1);
+      background-color: rgba($color-text-main, 1);
+    }
+  }
+}

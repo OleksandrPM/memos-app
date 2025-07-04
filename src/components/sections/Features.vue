@@ -37,7 +37,7 @@ const groupedFeatures = computed(() => {
           companies create websites for their startups quickly and easily.
         </p>
         <div
-          class="carousel-indicators features-carousel-indicators d-flex flex-column gap-3"
+          class="carousel-indicators custom-indicators features-carousel-indicators d-flex flex-column gap-3"
         >
           <button
             v-for="(group, index) in groupedFeatures"
@@ -74,14 +74,14 @@ const groupedFeatures = computed(() => {
   </section>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 #features {
   position: relative;
 
   padding-top: 6.25rem;
   padding-bottom: 6.25rem;
 
-  background: linear-gradient(rgba(47, 24, 147, 0.5)),
+  background: linear-gradient(rgba($color-background, 0.5)),
     url("../../assets/images/features/features-background.jpg");
   background-position: center;
   background-size: cover;
@@ -92,7 +92,7 @@ const groupedFeatures = computed(() => {
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   #features {
-    background: linear-gradient(rgba(47, 24, 147, 0.5)),
+    background: linear-gradient(rgba($color-background, 0.5)),
       url("../../assets/images/features/features-background.jpg");
   }
 }
@@ -107,20 +107,6 @@ const groupedFeatures = computed(() => {
   right: 0;
   margin: 0;
   align-items: end;
-}
-
-.carousel-indicators [data-bs-target] {
-  width: 15px;
-  height: 15px;
-  border: 1px solid hsla(0, 0%, 0%, 1);
-  border-radius: 50%;
-  background-color: hsla(0, 0%, 100%, 1);
-
-  transform: translateY(-50%);
-}
-
-.carousel-indicators .active {
-  background-color: hsla(0, 0%, 0%, 1);
 }
 
 .carousel-item-prev:not(.carousel-item-end),
