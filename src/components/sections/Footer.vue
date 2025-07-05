@@ -91,7 +91,7 @@
   </footer>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 footer {
   background-color: rgba(47, 24, 147, 1);
 }

@@ -1,3 +1,43 @@
+<script setup lang="ts">
+// import { ref, onMounted, onUnmounted } from "vue";
+
+// const activeLink = ref("hero");
+
+// const links = [
+//   { id: "hero", label: "Home" },
+//   { id: "features", label: "Features" },
+//   { id: "pricing", label: "Pricing" },
+//   { id: "blog", label: "Blog" },
+//   { id: "#", label: "ball" },
+//   { id: "#", label: "Be" },
+// ];
+
+// function setActive(id: string) {
+//   activeLink.value = id;
+// }
+
+// function onScroll() {
+//   const sections = document.querySelectorAll('section')
+//   const scrollY = window.scrollY
+
+//   sections.forEach((section) => {
+//     const top = section.offsetTop - 100
+//     const bottom = top + section.offsetHeight
+//     if (scrollY >= top && scrollY < bottom) {
+//       activeLink.value = section.id
+//     }
+//   })
+// }
+
+// onMounted(() => {
+//   window.addEventListener('scroll', onScroll)
+// })
+
+// onUnmounted(() => {
+//   window.removeEventListener('scroll', onScroll)
+// })
+</script>
+
 <template>
   <nav class="navbar navbar-expand-md w-100" aria-label="Fourth navbar example">
     <div class="container-fluid">
@@ -18,6 +58,16 @@
       >
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
+            <!-- <a
+              v-for="(link, index) in links"
+              :key="index"
+              :href="`#${link.id}`"
+              :class="{ active: activeLink === link.id }"
+              @click="setActive(link.id)"
+            >
+              {{ link.label }}
+            </a> -->
+
             <a
               href="#hero"
               class="nav-link active text-white px-2 link-secondary"

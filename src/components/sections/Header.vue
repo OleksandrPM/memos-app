@@ -34,7 +34,7 @@ onUnmounted(() => {
   </header>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .transition {
   transition: background-color 0.3s ease, box-shadow 0.3s ease,
     backdrop-filter 0.3s ease;

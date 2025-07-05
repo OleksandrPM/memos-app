@@ -135,21 +135,21 @@ const handleSubmit = (e: Event) => {
   </section>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 #contact {
-  background: linear-gradient(rgba(47, 24, 147, 0.5)),
-    url("../../assets/images/contact/contact-background.jpg");
+  background: linear-gradient(rgba(47, 24, 147, 0.4)),
+    url("../../assets/images/contact/contact-background.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-}
 
-@media (-webkit-min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
-  #contact {
-    background: linear-gradient(rgba(47, 24, 147, 0.5)),
-      url("../../assets/images/contact/contact-background.jpg");
+  @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    #contact {
+      background: linear-gradient(rgba(47, 24, 147, 0.4)),
+        url("../../assets/images/contact/contact-background@2x.webp");
+    }
   }
 }
 </style>

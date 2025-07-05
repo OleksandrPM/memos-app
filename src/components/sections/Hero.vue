@@ -1,6 +1,10 @@
-<script setup>
+<script setup lang="ts">
 import Introduction from "../Introduction.vue";
 import projects from "../../content/hero/projects.json";
+
+const handleClick = () => {
+  alert("Create account button was clicked");
+};
 </script>
 
 <template>
@@ -16,7 +20,7 @@ import projects from "../../content/hero/projects.json";
             :key="index"
             :data-bs-slide-to="index"
             :class="['pagination-btn', index === 0 ? 'active' : '']"
-            :aria-current="index === 0 ? 'true' : ''"
+            :aria-current="index === 0 ? 'true' : false"
             :aria-label="'Slide ' + index"
           ></button>
         </div>
@@ -65,31 +69,21 @@ import projects from "../../content/hero/projects.json";
   </section>
 </template>
 
-<script>
-export default {
-  methods: {
-    handleClick() {
-      alert("Create account button was clicked");
-    },
-  },
-};
-</script>
-
 <style scoped lang="scss">
 #hero {
   background: linear-gradient(rgba($color-background, 0.5)),
-    url("../../assets/images/hero/hero-background.jpg");
+    url("../../assets/images/hero/hero-background.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-}
 
-@media (-webkit-min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
-  #hero {
-    background: linear-gradient(rgba($color-background, 0.5)),
-      url("../../assets/images/hero/hero-background.jpg");
+  @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    #hero {
+      background: linear-gradient(rgba($color-background, 0.5)),
+        url("../../assets/images/hero/hero-background@2x.webp");
+    }
   }
 }
 </style>

@@ -81,19 +81,19 @@ const groupedFeatures = computed(() => {
   padding-top: 6.25rem;
   padding-bottom: 6.25rem;
 
-  background: linear-gradient(rgba($color-background, 0.5)),
-    url("../../assets/images/features/features-background.jpg");
+  background: linear-gradient(rgba($color-background, 0.4)),
+    url("../../assets/images/features/features-background.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-}
 
-@media (-webkit-min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
-  #features {
-    background: linear-gradient(rgba($color-background, 0.5)),
-      url("../../assets/images/features/features-background.jpg");
+  @media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    #features {
+      background: linear-gradient(rgba($color-background, 0.4)),
+        url("../../assets/images/features/features-background@2x.webp");
+    }
   }
 }
 
