@@ -4,28 +4,37 @@ import plans from "../../content/pricing/plans.json";
 </script>
 
 <template>
-  <section id="pricing">
-    <div class="container">
-      <div class="container py-3">
-        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-          <h2 class="display-4 fw-normal">Plans & Pricing</h2>
-          <p class="fs-5">
-            Startup Framework is free forever — you only pay for custom domain
-            hosting or to export your site.
-          </p>
-        </div>
-        <ul class="list-unstyled row row-cols-1 row-cols-md-3 text-center">
-          <li class="col" v-for="(plan, index) in plans" :key="index">
-            <PricingCard
-              :name="plan.name"
-              :price="plan.price"
-              :advantages="plan.advantages"
-            />
-          </li>
-        </ul>
-      </div>
+  <section id="pricing" class="section">
+    <div class="container text-center">
+      <h2 class="title">Plans & Pricing</h2>
+      <p class="text mx-auto">
+        Startup Framework is free forever — you only pay for custom domain
+        hosting or to export your site.
+      </p>
+      <ul class="list-unstyled row row-cols-1 row-cols-md-3 text-center">
+        <li class="col" v-for="(plan, index) in plans" :key="index">
+          <PricingCard
+            :name="plan.name"
+            :price="plan.price"
+            :advantages="plan.advantages"
+          />
+        </li>
+      </ul>
     </div>
   </section>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+.title {
+  margin-bottom: 3rem;
+
+  @include font-42;
+}
+
+.text {
+  margin-bottom: 5.4rem;
+  max-width: 58.6rem;
+
+  @include font-base;
+}
+</style>

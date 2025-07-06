@@ -32,7 +32,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <svg class="" width="39" height="32">
+              <svg width="39" height="32">
                 <use href="/sprite.svg#twitter"></use>
               </svg>
             </a>
