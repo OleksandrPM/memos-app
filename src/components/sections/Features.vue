@@ -138,13 +138,12 @@ const groupedFeatures = computed(() => {
 }
 
 .carousel-title {
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
 
   @include font-42;
 
-  @media screen and (max-width: calc($bp-tablet-width - 0.02px)) {
-    margin-bottom: 1.2rem;
-    font-size: 3rem;
+  @media screen and (min-width: $bp-tablet-width) {
+    margin-bottom: 2rem;
   }
 }
 
