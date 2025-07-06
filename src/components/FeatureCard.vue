@@ -12,7 +12,7 @@ const props = defineProps<{
   <div class="feature-card d-flex flex-column">
     <div class="feature-icon-small d-inline-flex align-items-center">
       <svg
-        class="bi"
+        class="icon"
         :width="props.badgeWidth"
         :height="props.badgeHeight"
         aria-hidden="true"

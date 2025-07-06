@@ -83,12 +83,6 @@ const groupedFeatures = computed(() => {
 <style scoped lang="scss">
 #features {
   position: relative;
-
-  @include paddings-section-mobile;
-
-  padding-top: 6.25rem;
-  padding-bottom: 6.25rem;
-
   display: flex;
   align-items: center;
   gap: 3.345rem;
@@ -151,7 +145,6 @@ const groupedFeatures = computed(() => {
   @media screen and (max-width: calc($bp-tablet-width - 0.02px)) {
     margin-bottom: 1.2rem;
     font-size: 3rem;
-    text-align: center;
   }
 }
 
@@ -162,7 +155,6 @@ const groupedFeatures = computed(() => {
 
   @media screen and (max-width: calc($bp-tablet-width - 0.02px)) {
     margin-bottom: 3rem;
-    font-size: 1.8rem;
   }
 }
 

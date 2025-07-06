@@ -65,9 +65,6 @@ const handleClick = () => {
 
 <style scoped lang="scss">
 #hero {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-
   background: linear-gradient(rgba($color-background, 0.5)),
     url("../../assets/images/hero/hero-background.webp");
 
@@ -131,24 +128,26 @@ const handleClick = () => {
 
 .hero-button {
   width: 16rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  height: 6rem;
 
   @include font-18;
   font-size: 1.6rem;
   text-align: center;
   vertical-align: middle;
+  border-radius: 10rem;
 
   color: inherit;
   background-color: $color-hero-btn;
 
-  border-radius: 10rem;
+  transition: opacity 0.3s ease;
 
   @media screen and (min-width: $bp-tablet-width) {
     width: 23rem;
-    padding-top: 1.7rem;
-    padding-bottom: 1.7rem;
     font-size: 1.8rem;
+  }
+
+  &:hover {
+    opacity: 0.7;
   }
 }
 </style>

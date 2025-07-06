@@ -35,11 +35,6 @@ h1 {
 }
 
 p {
-  font-size: 1.8rem;
   @include font-base;
-
-  @media screen and (min-width: $bp-tablet-width) {
-    font-size: 2.2rem;
-  }
 }
 </style>

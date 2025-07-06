@@ -1,32 +1,35 @@
 <template>
-  <section id="action">
-    <div class="container">
-      <h2 class="visually-hidden">Call To Action</h2>
-      <div class="p-5 text-center">
-        <h2 class="">Easy to setup. Easy to maintain</h2>
-        <p class="col-lg-8 mx-auto fs-5">
-          Bootstrap is a widely-used, sleek, intuitive and powerful front-end
-          framework for faster and easier web development.
-        </p>
-        <div class="d-inline-flex gap-5 mb-5">
-          <a
-            href="https://www.youtube.com/"
-            class="d-inline-flex align-items-center btn btn-danger btn-lg rounded-circle play"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg class="bi ms-2" width="16" height="16" aria-hidden="true">
-              <use href="/sprite.svg#play"></use>
-            </svg>
-          </a>
-          <a
-            href="https://getbootstrap.com/"
-            class="btn btn-success rounded-pill px-4 py-2"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Get Started</a
-          >
-        </div>
+  <section id="action" class="section">
+    <h2 class="visually-hidden">Call To Action</h2>
+    <div class="container d-flex flex-column align-items-center">
+      <h3 class="title text-center">
+        Easy to setup.<br />
+        Easy to maintain
+      </h3>
+      <p class="text text-center">
+        Bootstrap is a widely-used, sleek, intuitive and powerful front-end
+        framework for faster and easier web development.
+      </p>
+      <div class="buttons">
+        <a
+          href="https://www.youtube.com/"
+          class="play"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Go to Youtube"
+        >
+          <svg class="icon" width="16" height="18" aria-hidden="true">
+            <use href="/sprite.svg#play"></use>
+          </svg>
+        </a>
+        <a
+          href="https://getbootstrap.com/"
+          class="button"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Go to Bootstrap"
+          >Get Started</a
+        >
       </div>
     </div>
   </section>
@@ -49,7 +52,90 @@
   }
 }
 
+.title {
+  margin-bottom: 2rem;
+
+  @include font-58;
+
+  @media screen and (min-width: $bp-tablet-width) {
+    margin-bottom: 2rem;
+    width: 77rem;
+  }
+}
+
+.text {
+  margin-bottom: 5.8rem;
+
+  @include font-base;
+
+  @media screen and (min-width: $bp-tablet-width) {
+    margin-bottom: 5.8rem;
+    width: 48rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+
+  @media screen and (min-width: $bp-tablet-width) {
+    flex-direction: row;
+  }
+}
+
 .play {
-  display: block;
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+
+  border-radius: 50%;
+  background-color: $color-youtube;
+
+  transition: opacity 0.3s ease;
+
+  @media screen and (min-width: $bp-tablet-width) {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  & .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -40%);
+  }
+}
+
+.button {
+  height: 5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+
+  @include font-20;
+  line-height: 5rem;
+  vertical-align: middle;
+  border-radius: 10rem;
+
+  color: inherit;
+  background-color: $color-primary-btn;
+
+  transition: opacity 0.3s ease;
+
+  @media screen and (min-width: $bp-tablet-width) {
+    height: 7rem;
+    padding-left: 5.2rem;
+    padding-right: 5.2rem;
+    line-height: 7rem;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
 </style>

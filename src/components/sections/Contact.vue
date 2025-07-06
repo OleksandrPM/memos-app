@@ -19,9 +19,9 @@ const handleSubmit = (e: Event) => {
 </script>
 
 <template>
-  <section id="contact" class="py-5">
+  <section id="contact" class="">
     <h2 class="visually-hidden">Contact</h2>
-    <div class="container px-5 py-5">
+    <div class="container ">
       <div class="row">
         <div class="col">
           <h3>Let’s Keep in Touch</h3>
