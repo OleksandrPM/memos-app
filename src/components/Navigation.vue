@@ -1,41 +1,43 @@
 <script setup lang="ts">
-// import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
+import DribbleIcon from "./DribbleIcon.vue";
+import BehanceIcon from "./BehanceIcon.vue";
 
-// const activeLink = ref("hero");
+const activeLink = ref("hero");
 
-// const links = [
-//   { id: "hero", label: "Home" },
-//   { id: "features", label: "Features" },
-//   { id: "pricing", label: "Pricing" },
-//   { id: "blog", label: "Blog" },
-//   { id: "#", label: "ball" },
-//   { id: "#", label: "Be" },
-// ];
+const links = [
+  { id: "hero", label: "Home" },
+  { id: "features", label: "Features" },
+  { id: "pricing", label: "Pricing" },
+  { id: "blog", label: "Blog" },
+  { id: "hero", icon: DribbleIcon },
+  { id: "pricing", icon: BehanceIcon },
+];
 
-// function setActive(id: string) {
-//   activeLink.value = id;
-// }
+function setActive(id: string) {
+  activeLink.value = id;
+}
 
-// function onScroll() {
-//   const sections = document.querySelectorAll('section')
-//   const scrollY = window.scrollY
+function onScroll() {
+  const sectionsEl = document.querySelectorAll("section");
+  const scrollY = window.scrollY;
 
-//   sections.forEach((section) => {
-//     const top = section.offsetTop - 100
-//     const bottom = top + section.offsetHeight
-//     if (scrollY >= top && scrollY < bottom) {
-//       activeLink.value = section.id
-//     }
-//   })
-// }
+  sectionsEl.forEach((section) => {
+    const top = section.offsetTop - 100;
+    const bottom = top + section.offsetHeight;
+    if (scrollY >= top && scrollY < bottom) {
+      activeLink.value = section.id;
+    }
+  });
+}
 
-// onMounted(() => {
-//   window.addEventListener('scroll', onScroll)
-// })
+onMounted(() => {
+  window.addEventListener("scroll", onScroll);
+});
 
-// onUnmounted(() => {
-//   window.removeEventListener('scroll', onScroll)
-// })
+onUnmounted(() => {
+  window.removeEventListener("scroll", onScroll);
+});
 </script>
 
 <template>
@@ -59,45 +61,20 @@
       id="navbarsExample04"
     >
       <ul class="navbar-nav d-flex justify-content-center">
-        <li class="nav-item">
-          <!-- <a
-              v-for="(link, index) in links"
-              :key="index"
-              :href="`#${link.id}`"
-              :class="{ active: activeLink === link.id }"
-              @click="setActive(link.id)"
-            >
-              {{ link.label }}
-            </a> -->
-
+        <li v-for="(link, index) in links" :key="index" class="nav-item">
           <a
-            href="#hero"
-            class="nav-link current text-white"
-            aria-current="page"
-            >Home</a
+            v-if="link.label || link.icon"
+            :href="`#${link.id}`"
+            :class="[
+              'nav-link text-white',
+              { current: activeLink === link.id },
+            ]"
+            @click="setActive(link.id)"
           >
-        </li>
-        <li class="nav-item">
-          <a href="#features" class="nav-link text-white">Features</a>
-        </li>
-        <li class="nav-item">
-          <a href="#pricing" class="nav-link text-white">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link text-white">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link text-white">
-            <svg class="nav-img" width="16" height="21">
-              <use href="/sprite.svg#fa-dribbble"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link text-white">
-            <svg class="svg" width="21" height="21">
-              <use href="/sprite.svg#fa-behance"></use>
-            </svg>
+            <span v-if="link.icon" class="me-1">
+              <component :is="link.icon" />
+            </span>
+            {{ link.label }}
           </a>
         </li>
       </ul>

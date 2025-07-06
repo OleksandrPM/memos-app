@@ -49,8 +49,8 @@ const handleClick = (e: Event): void => {
 h4 {
   margin-bottom: 1rem;
 
-  @include font-base;
   font-family: $font-normal;
+  @include font-base;
 
   @media screen and (min-width: $bp-tablet-width) {
     margin-bottom: 2.26rem;

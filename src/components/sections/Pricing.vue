@@ -11,7 +11,9 @@ import plans from "../../content/pricing/plans.json";
         Startup Framework is free forever — you only pay for custom domain
         hosting or to export your site.
       </p>
-      <ul class="list-unstyled row row-cols-1 row-cols-md-3 text-center">
+      <ul
+        class="list-unstyled row row-cols-1 row-cols-md-2 row-cols-xxl-3 text-center d-flex row-gap-5"
+      >
         <li class="col" v-for="(plan, index) in plans" :key="index">
           <PricingCard
             :name="plan.name"
