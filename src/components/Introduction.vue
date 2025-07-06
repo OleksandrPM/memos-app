@@ -1,20 +1,45 @@
-<script>
-export default {
-  name: "Introduction",
-  props: {
-    name: { type: String, default: "Introduction`s name" },
-    motto: { type: String, default: "Motto" },
-    text: { type: String, default: "Introduction`s text" },
-  },
-};
+<script setup lang="ts">
+const props = defineProps<{
+  name: string;
+  motto: string;
+  text: string;
+}>();
 </script>
 
 <template>
   <h4>{{ name }}</h4>
   <h1 class="display-5 fw-bold">{{ motto }}</h1>
-  <div class="col-lg-6 mx-auto">
-    <p class="lead mb-4">
-      {{ text }}
-    </p>
-  </div>
+  <p>
+    {{ text }}
+  </p>
 </template>
+
+<style scoped lang="scss">
+h4 {
+  margin-bottom: 2.18rem;
+
+  @include font-24;
+}
+
+h1 {
+  margin-bottom: 2.72rem;
+
+  font-size: 4rem;
+  line-height: 4rem;
+  letter-spacing: -0.1rem;
+
+  @media screen and (min-width: $bp-tablet-width) {
+    font-size: 7.2rem;
+    line-height: 8.6rem;
+  }
+}
+
+p {
+  font-size: 1.8rem;
+  @include font-base;
+
+  @media screen and (min-width: $bp-tablet-width) {
+    font-size: 2.2rem;
+  }
+}
+</style>

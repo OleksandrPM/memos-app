@@ -1,5 +1,11 @@
 // Fonts
 @font-face {
+  font-family: DMSansLight;
+  src: url("/fonts/DMSans-VariableFont.ttf") format("ttf");
+  font-weight: 400;
+}
+
+@font-face {
   font-family: DMSansNormal;
   src: url("/fonts/DMSans-VariableFont.ttf") format("ttf");
   font-weight: 500;
@@ -13,8 +19,10 @@
 
 // Breakpoints
 $bp-tablet-width: 768px;
+$bp-laptop-width: 1024px;
 
 // Fonts
+$font-light: "DMSansLight", sans-serif;
 $font-normal: "DMSansNormal", sans-serif;
 $font-bold: "DMSansBold", sans-serif;
 
@@ -36,14 +44,12 @@ $opacity-main: 0.5;
 
 // Navlinks
 // font-size: 18px;
-// leading-trim: NONE;
 // line-height: 26px;
 // letter-spacing: 0px;
 
 // Startup
 // font-weight: 700;
 // font-size: 24px;
-// leading-trim: NONE;
 // line-height: 100%;
 // letter-spacing: -0.29px;
 // text-align: center;
@@ -51,7 +57,6 @@ $opacity-main: 0.5;
 // H1
 // font-weight: 700;
 // font-size: 72px;
-// leading-trim: NONE;
 // line-height: 86px;
 // letter-spacing: -1px;
 // text-align: center;
@@ -60,14 +65,12 @@ $opacity-main: 0.5;
 // Text
 // font-weight: 500;
 // font-size: 22px;
-// leading-trim: NONE;
 // line-height: 32px;
 // letter-spacing: 0px;
 // text-align: center;
 
 // Button
 // font-size: 18px;
-// leading-trim: NONE;
 // line-height: 26px;
 // letter-spacing: 0px;
 // text-align: center;
@@ -78,21 +81,18 @@ $opacity-main: 0.5;
 // H3
 // font-weight: 700;
 // font-size: 42px;
-// leading-trim: NONE;
 // line-height: 52px;
 // letter-spacing: -0.4px;
 
 // Text - like in Hero
 // font-weight: 500;
 // font-size: 22px;
-// leading-trim: NONE;
 // line-height: 32px;
 // letter-spacing: 0px;
 
 // Feature
 // font-weight: 700;
 // font-size: 14px;
-// leading-trim: NONE;
 // line-height: 26px;
 // letter-spacing: 2px;
 // text-transform: uppercase;
@@ -100,7 +100,6 @@ $opacity-main: 0.5;
 // Feature-text
 // font-weight: 400;
 // font-size: 16px;
-// leading-trim: NONE;
 // line-height: 26px;
 // letter-spacing: 0px;
 
@@ -109,7 +108,6 @@ $opacity-main: 0.5;
 // H3
 // font-weight: 700;
 // font-size: 58px;
-// leading-trim: NONE;
 // line-height: 70px;
 // letter-spacing: -1px;
 // text-align: center;
@@ -117,7 +115,6 @@ $opacity-main: 0.5;
 // Text
 // font-weight: 500;
 // font-size: 22px;
-// leading-trim: NONE;
 // line-height: 32px;
 // letter-spacing: 0px;
 // text-align: center;
@@ -125,7 +122,6 @@ $opacity-main: 0.5;
 // Button
 // font-weight: 500;
 // font-size: 20px;
-// leading-trim: NONE;
 // line-height: 26px;
 // letter-spacing: 0px;
 // text-align: center;
@@ -136,21 +132,18 @@ $opacity-main: 0.5;
 // H3
 // font-weight: 700;
 // font-size: 42px;
-// leading-trim: NONE;
 // line-height: 52px;
 // letter-spacing: -0.4px;
 
 // Text
 // font-weight: 500;
 // font-size: 22px;
-// leading-trim: NONE;
 // line-height: 32px;
 // letter-spacing: 0px;
 
 // Contact-link
 // font-weight: 400;
 // font-size: 16px;
-// leading-trim: NONE;
 // line-height: 26px;
 // letter-spacing: 0px;
 
@@ -159,7 +152,6 @@ $opacity-main: 0.5;
 // input label
 // font-weight: 700;
 // font-size: 14px;
-// leading-trim: NONE;
 // line-height: 26px;
 // letter-spacing: 2px;
 // text-transform: uppercase;
@@ -167,7 +159,6 @@ $opacity-main: 0.5;
 // input placeholder
 // font-weight: 500;
 // font-size: 18px;
-// leading-trim: NONE;
 // line-height: 26px;
 // letter-spacing: 0px;
 // vertical-align: middle;
@@ -176,7 +167,6 @@ $opacity-main: 0.5;
 // H3
 // font-weight: 700;
 // font-size: 42px;
-// leading-trim: NONE;
 // line-height: 52px;
 // letter-spacing: -0.4px;
 // text-align: center;
@@ -184,7 +174,6 @@ $opacity-main: 0.5;
 // Text
 // font-weight: 500;
 // font-size: 22px;
-// leading-trim: NONE;
 // line-height: 32px;
 // letter-spacing: 0px;
 // text-align: center;
@@ -193,14 +182,12 @@ $opacity-main: 0.5;
 //Heading
 // font-weight: 500;
 // font-size: 22px;
-// leading-trim: NONE;
 // line-height: 32px;
 // letter-spacing: 0px;
 
 // Price
 // font-weight: 700;
 // font-size: 58px;
-// leading-trim: NONE;
 // line-height: 70px;
 // letter-spacing: -1px;
 // text-align: center;
@@ -208,14 +195,12 @@ $opacity-main: 0.5;
 // $ mark
 // font-weight: 400;
 // font-size: 16px;
-// leading-trim: NONE;
 // line-height: 26px;
 // letter-spacing: 0px;
 
 // Feature active
 // font-weight: 400;
 // font-size: 16px;
-// leading-trim: NONE;
 // line-height: 26px;
 // letter-spacing: 0px;
 
@@ -223,7 +208,6 @@ $opacity-main: 0.5;
 // font-family: DM Sans;
 // font-weight: 400;
 // font-size: 16px;
-// leading-trim: NONE;
 // line-height: 26px;
 // letter-spacing: 0px;
 // opacity: 70%;
@@ -258,7 +242,6 @@ $opacity-main: 0.5;
 // Statrup
 // font-weight: 700;
 // font-size: 24px;
-// leading-trim: NONE;
 // line-height: 100%;
 // letter-spacing: -0.29px;
 // text-align: center;
@@ -266,7 +249,6 @@ $opacity-main: 0.5;
 // Links
 // font-weight: 400;
 // font-size: 16px;
-// leading-trim: NONE;
 // line-height: 26px;
 // letter-spacing: 0px;
 
@@ -274,7 +256,6 @@ $opacity-main: 0.5;
 // font-family: FontAwesome;
 // font-weight: 400;
 // font-size: 18px;
-// leading-trim: NONE;
 // line-height: 26px;
 // letter-spacing: 0px;
 // text-transform: uppercase;
@@ -291,14 +272,12 @@ $opacity-main: 0.5;
 // Bottom links
 // font-weight: 400;
 // font-size: 16px;
-// leading-trim: NONE;
 // line-height: 26px;
 // letter-spacing: 0px;
 
 // All rights reserved
 // font-weight: 400;
 // font-size: 16px;
-// leading-trim: NONE;
 // line-height: 26px;
 // letter-spacing: 0px;
 // text-align: right;

@@ -36,9 +36,8 @@
 #action {
   background: linear-gradient(rgba(47, 24, 147, 0.3)),
     url("../../assets/images/call-to-action/call-to-action-background.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+
+  @include background-center;
 
   @media (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),

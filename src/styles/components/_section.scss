@@ -1,0 +1,13 @@
+@use "../utils/variables" as *;
+
+.section {
+  width: 100%;
+
+  padding-left: 2vw;
+  padding-right: 2vw;
+
+  @media screen and (min-width: $bp-tablet-width) {
+    padding-left: 11.5rem;
+    padding-right: 11.5rem;
+  }
+}

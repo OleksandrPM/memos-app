@@ -8,11 +8,11 @@ const handleClick = () => {
 </script>
 
 <template>
-  <section id="hero" class="px-4 py-5 text-center">
-    <div class="container py-5">
-      <h2 class="visually-hidden">Hero</h2>
+  <section id="hero" class="section text-center">
+    <h2 class="visually-hidden">Hero</h2>
+    <div class="container">
       <div id="carouselHero" class="carousel slide">
-        <div class="carousel-indicators custom-indicators d-flex gap-3">
+        <div class="carousel-indicators custom-indicators d-flex">
           <button
             v-for="(project, index) in projects"
             type="button"
@@ -38,7 +38,7 @@ const handleClick = () => {
           </li>
         </ul>
         <button
-          class="carousel-control-prev"
+          class="carousel-control carousel-control-prev"
           type="button"
           data-bs-target="#carouselHero"
           data-bs-slide="prev"
@@ -47,7 +47,7 @@ const handleClick = () => {
           <span class="visually-hidden">Previous</span>
         </button>
         <button
-          class="carousel-control-next"
+          class="carousel-control carousel-control-next"
           type="button"
           data-bs-target="#carouselHero"
           data-bs-slide="next"
@@ -56,34 +56,99 @@ const handleClick = () => {
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-        <button
-          class="btn btn-primary rounded-pill btn-lg px-4"
-          @click="handleClick"
-        >
-          Create an account
-        </button>
-      </div>
+      <button class="hero-button btn" @click="handleClick">
+        Create an Account
+      </button>
     </div>
   </section>
 </template>
 
 <style scoped lang="scss">
 #hero {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
   background: linear-gradient(rgba($color-background, 0.5)),
     url("../../assets/images/hero/hero-background.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+
+  @include background-center;
+
+  @media screen and (min-width: $bp-tablet-width) {
+    padding-top: 25.3rem;
+    padding-bottom: 16.3rem;
+  }
 
   @media (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    #hero {
-      background: linear-gradient(rgba($color-background, 0.5)),
-        url("../../assets/images/hero/hero-background@2x.webp");
-    }
+    background: linear-gradient(rgba($color-background, 0.5)),
+      url("../../assets/images/hero/hero-background@2x.webp");
+  }
+}
+
+.carousel {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+
+  display: flex;
+  justify-content: center;
+
+  @media screen and (min-width: $bp-tablet-width) {
+    margin-bottom: 5.8rem;
+    padding-bottom: 5.8rem;
+  }
+}
+
+.carousel-inner {
+  width: 70%;
+
+  @media screen and (min-width: $bp-tablet-width) {
+    width: 48rem;
+  }
+
+  @media screen and (min-width: $bp-laptop-width) {
+    width: 73.6rem;
+  }
+}
+
+.carousel-control {
+  height: 17rem;
+
+  &.carousel-control-prev {
+    justify-content: start;
+  }
+
+  &.carousel-control-next {
+    justify-content: end;
+  }
+
+  & .carousel-control-prev-icon,
+  & .carousel-control-next-icon {
+    width: 1.1rem;
+    height: 3.5rem;
+  }
+}
+
+.hero-button {
+  width: 16rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  @include font-18;
+  font-size: 1.6rem;
+  text-align: center;
+  vertical-align: middle;
+
+  color: inherit;
+  background-color: $color-hero-btn;
+
+  border-radius: 10rem;
+
+  @media screen and (min-width: $bp-tablet-width) {
+    width: 23rem;
+    padding-top: 1.7rem;
+    padding-bottom: 1.7rem;
+    font-size: 1.8rem;
   }
 }
 </style>
