@@ -1,20 +1,17 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref } from "vue";
 import Navigation from "../Navigation.vue";
 
 const isScrolled = ref(false);
+const isMobNavOpened = ref(false);
 
-const handleScroll = () => {
-  isScrolled.value = window.scrollY > 0;
-};
+function toggleIsMobNavOpened() {
+  isMobNavOpened.value = !isMobNavOpened.value;
+}
 
-onMounted(() => {
-  window.addEventListener("scroll", handleScroll);
-});
-
-onUnmounted(() => {
-  window.removeEventListener("scroll", handleScroll);
-});
+function setIsScrolled(positionY: number) {
+  isScrolled.value = positionY > 0;
+}
 </script>
 
 <template>
@@ -22,11 +19,18 @@ onUnmounted(() => {
     :class="[
       'head section',
       'sticky-top position-fixed w-100 transition',
-      { 'bg-dark bg-opacity-25 shadow-sm backdrop-blur': isScrolled },
+      {
+        'bg-dark bg-opacity-25 shadow-sm backdrop-blur':
+          isScrolled || isMobNavOpened,
+      },
     ]"
   >
     <div class="container">
-      <Navigation />
+      <Navigation
+        :is-opened="isMobNavOpened"
+        @toggle="toggleIsMobNavOpened"
+        @scroll="setIsScrolled"
+      />
     </div>
   </header>
 </template>

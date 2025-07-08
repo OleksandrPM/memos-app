@@ -3,6 +3,9 @@ import { ref, onMounted, onUnmounted } from "vue";
 import DribbleIcon from "./DribbleIcon.vue";
 import BehanceIcon from "./BehanceIcon.vue";
 
+const emit = defineEmits(["toggle", "scroll"]);
+const props = defineProps<{ isOpened: boolean }>();
+
 const activeLink = ref("hero");
 
 const links = [
@@ -14,11 +17,35 @@ const links = [
   { id: "pricing", icon: BehanceIcon },
 ];
 
-function setActive(id: string) {
+function handleLinkClick(id: string) {
   activeLink.value = id;
+
+  closeMobileMenu();
+  emit("toggle");
 }
 
-function onScroll() {
+function closeMobileMenu() {
+  const togglerEl = document.querySelector(".navbar-toggler");
+  const collapseNavbarEl = document.querySelector("#collapseNavbar");
+
+  if (
+    !togglerEl?.classList.contains("collapsed") &&
+    collapseNavbarEl?.classList.contains("show")
+  ) {
+    togglerEl?.classList.add("collapsed");
+    collapseNavbarEl.classList.remove("show");
+  }
+}
+
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
+
+function handleScroll() {
   const sectionsEl = document.querySelectorAll("section");
   const scrollY = window.scrollY;
 
@@ -29,15 +56,9 @@ function onScroll() {
       activeLink.value = section.id;
     }
   });
+
+  emit("scroll", scrollY);
 }
-
-onMounted(() => {
-  window.addEventListener("scroll", onScroll);
-});
-
-onUnmounted(() => {
-  window.removeEventListener("scroll", onScroll);
-});
 </script>
 
 <template>
@@ -49,16 +70,17 @@ onUnmounted(() => {
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
-      data-bs-target="#navbarsExample04"
-      aria-controls="navbarsExample04"
+      data-bs-target="#collapseNavbar"
+      aria-controls="collapseNavbar"
       aria-expanded="false"
       aria-label="Toggle navigation"
+      @click="emit('toggle')"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div
       class="collapse navbar-collapse justify-content-center md-bg-dark bg-opacity-75"
-      id="navbarsExample04"
+      id="collapseNavbar"
     >
       <ul class="navbar-nav d-flex justify-content-center">
         <li v-for="(link, index) in links" :key="index" class="nav-item">
@@ -69,7 +91,7 @@ onUnmounted(() => {
               'nav-link text-white',
               { current: activeLink === link.id },
             ]"
-            @click="setActive(link.id)"
+            @click="() => handleLinkClick(link.id)"
           >
             <span v-if="link.icon" class="me-1">
               <component :is="link.icon" />
@@ -90,8 +112,8 @@ onUnmounted(() => {
 .navbar-toggler {
   margin-left: auto;
 
-  color: white;
-  border-color: white;
+  color: $color-text-main;
+  border-color: $color-text-main;
 
   transition: color 0.3s ease, border-color 0.3s ease;
 
